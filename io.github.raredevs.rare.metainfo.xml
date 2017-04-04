@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>io.github.raredevs.rare</id>
+    <provides>
+        <id>io.github.dummerle.rare</id>
+    </provides>
+    <replaces>
+        <id>io.github.dummerle.rare</id>
+    </replaces>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0+</project_license>
+    <name>Rare</name>
+    <developer id="io.github">
+        <name>RareDevs</name>
+    </developer>
+    <summary>Open source alternative for Epic Games Launcher, using Legendary</summary>
+    <description>
+        <p>
+            Rare is a frontend for legendary-gl, an open source alternative for
+            the Epic Games Launcher.
+        </p>
+        <p>Why Rare?</p>
+        <ul>
+            <li>Tries to be as lightweight as we can make it while still offering a feature-full experience</li>
+            <li>Supports all major platforms (Windows, Linux, Mac)</li>
+            <li>Gets out of your way when you don't need it, allowing you to enjoy your games</li>
+        </ul>
+        <p>
+            Rare supports all core features from the Epic Games Launcher,
+            like installing and launching games, also many options to launch
+            games with compatibility tools.
+        </p>
+    </description>
+    <launchable type="desktop-id">io.github.raredevs.rare.desktop</launchable>
+    <screenshots>
+        <screenshot type="default">
+            <caption>Game library</caption>
+            <image>https://github.com/RareDevs/Rare/blob/main/docs/assets/RareLibraryIcon.png?raw=true</image>
+        </screenshot>
+        <screenshot>
+            <caption>Game details</caption>
+            <image>https://github.com/RareDevs/Rare/blob/main/docs/assets/RareGameInfo.png?raw=true</image>
+        </screenshot>
+    </screenshots>
+    <url type="homepage">https://github.com/RareDevs/Rare</url>
+    <releases>
+        <release version="1.12.0" date="2025-12-09">
+            <description>
+                <p>Cobia Cormorant</p>
+            </description>
+            <url>https://github.com/RareDevs/Rare/releases/tag/1.12.0</url>
+        </release>
+        <release version="1.11.3.332" date="2025-12-06">
+            <description>
+                <p>Boga Discus (Hotfix 3) (dev 332)</p>
+            </description>
+            <url>https://github.com/RareDevs/Rare/releases/tag/1.11.3.332</url>
+        </release>
+        <release version="1.11.3.286" date="2025-11-18">
+            <description>
+                <p>Boga Discus (Hotfix 3) (dev 286)</p>
+            </description>
+            <url>https://github.com/RareDevs/Rare/releases/tag/1.11.3.286</url>
+        </release>
+        <release version="1.11.3.255" date="2025-10-31">
+            <description>
+                <p>Boga Discus (Hotfix 3) (dev 255)</p>
+            </description>
+            <url>https://github.com/RareDevs/Rare/releases/tag/1.11.3.255</url>
+        </release>
+        <release version="1.11.3.221" date="2025-10-01">
+            <description>
+                <p>Boga Discus (Hotfix 3) (dev 221)</p>
+            </description>
+            <url>https://github.com/RareDevs/Rare/releases/tag/1.11.3.221</url>
+        </release>
+        <release version="1.11.3" date="2025-01-11">
+            <description>
+                <p>Boga Discus (Hotfix 3)</p>
+            </description>
+            <url>https://github.com/RareDevs/Rare/releases/tag/1.11.3</url>
+        </release>
+        <release version="1.11.2" date="2025-01-01">
+            <description>
+                <p>Boga Discus (Hotfix 2)</p>
+            </description>
+            <url>https://github.com/RareDevs/Rare/releases/tag/1.11.2</url>
+        </release>
+        <release version="1.11.0" date="2025-01-01">
+            <description>
+                <p>Boga Discus</p>
+            </description>
+            <url>https://github.com/RareDevs/Rare/releases/tag/1.11.0</url>
+        </release>
+        <release version="1.10.11" date="2023-12-17">
+            <description>
+                <p>Garlic Crab (Hotfix 11)</p>
+            </description>
+            <url>https://github.com/RareDevs/Rare/releases/tag/1.10.11</url>
+        </release>
+    </releases>
+    <content_rating type="oars-1.0"/>
+</component>
