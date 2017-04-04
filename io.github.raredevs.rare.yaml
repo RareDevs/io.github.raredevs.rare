@@ -1,0 +1,61 @@
+id: io.github.raredevs.rare
+runtime: org.kde.Platform
+runtime-version: '6.9'
+sdk: org.kde.Sdk
+base: io.qt.PySide.BaseApp
+base-version: '6.9'
+cleanup-commands:
+  - /app/cleanup-BaseApp.sh
+build-options:
+  env:
+    BASEAPP_REMOVE_WEBENGINE: '1'
+    SETUPTOOLS_SCM_PRETEND_VERSION: '1.12.0.99'
+command: rare
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --filesystem=xdg-desktop:create
+  - --filesystem=xdg-data/applications:create
+  - --filesystem=xdg-data/umu:ro
+  - --filesystem=xdg-data/Steam:ro
+  - --filesystem=home/Games:create
+  - --filesystem=home
+  - --device=all
+  - --talk-name=org.freedesktop.Flatpak
+  - --env=PYTHONNOUSERSITE=1,
+  - --env=PYTHONSAFEPATH=1,
+  - --env=PYTHONPATH=
+modules:
+  - name: metadata
+    buildsystem: simple
+    build-commands:
+      - install -Dm644 io.github.raredevs.rare.appdata.xml ${FLATPAK_DEST}/share/metainfo/io.github.raredevs.rare.appdata.xml
+    sources:
+      - type: file
+        path: io.github.raredevs.rare.appdata.xml
+  - name: rare
+    buildsystem: simple
+    build-commands:
+      - ./tools/qrc2py.sh --force
+      - ./tools/ts2qm.py
+
+      - python3 setup.py bdist_wheel
+      - python3 -m installer -p ${FLATPAK_DEST} dist/*.whl
+
+      - sed -i s/Icon=rare/Icon=io\.github\.raredevs\.rare/g misc/rare.desktop
+      - install -Dm644 misc/rare.desktop
+          ${FLATPAK_DEST}/share/applications/io.github.raredevs.rare.desktop
+      - install -Dm644 rare/resources/images/Rare.svg
+          ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/io.github.raredevs.rare.svg
+      - install -Dm644 rare/resources/images/Rare.png
+          ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/io.github.raredevs.rare.png
+    sources:
+      - type: git
+        url: https://github.com/RareDevs/Rare.git
+        tag: '1.12.0.99'
+        disable-shallow-clone: true
+    modules:
+      - python3-requirements-source.yaml
+      - python3-requirements-binary.yaml
